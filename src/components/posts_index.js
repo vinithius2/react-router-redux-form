@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { fetchPosts } from '../actions'
 
 class PostIndex extends Component {
+    //React
     componentDidMount() {
         this.props.fetchPosts();
     }
@@ -22,6 +23,7 @@ class PostIndex extends Component {
     }
 
     render() {
+        console.log(this.props.posts)
         return (
             <div>
                 <div className="text-xa-right">
@@ -39,7 +41,12 @@ class PostIndex extends Component {
 }
 
 function mapStateToProps(state) {
-    return { posts: state.posts };
+    // O método mapStateToProps transforma um trecho do estado da Store 
+    // em uma prop utilizável pelo componente.
+    // console.log(state)
+    return { 
+        posts: state.posts 
+    };
 }
 
 export default connect(mapStateToProps, { fetchPosts })(PostIndex);

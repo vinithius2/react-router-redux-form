@@ -28,7 +28,6 @@ class PostNew extends Component {
         this.props.createPost(values, () => {
             this.props.history.push('/');
         });
-        // console.log(values);
     }
 
     render() {
